@@ -4,5 +4,6 @@
 - include_tasks: install_blue_matrix_theme.yml
 - include_tasks: set_padding.yml
 - include_tasks: configure_keybindings.yml
+- include_tasks: configure_git.yml
 - include_tasks: set_wallpaper.yml
 - include_tasks: set_favourite_apps.yml

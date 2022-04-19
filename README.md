@@ -37,13 +37,13 @@ A checked box indicates this step has been implemented.
     - [x] qbittorrent
     - [x] vlc
     - [x] multimedia plugins
-- [ ] Personalize
+- [x] Personalize
     - [x] Install [Colloid Theme](https://github.com/vinceliuice/Colloid-gtk-theme)
     - [x] Install [Colloid Icons](https://github.com/vinceliuice/Colloid-icon-theme)
     - [x] Customize Terminal
         - [x] Install [Blue Matrix Theme](https://windowsterminalthemes.dev/?theme=Blue%20Matrix)
         - [x] Set Padding
     - [x] Setup shortcuts
-    - [ ] Configure git
+    - [x] Configure git
     - [x] Set wallpaper
     - [x] Set favourite apps in dock

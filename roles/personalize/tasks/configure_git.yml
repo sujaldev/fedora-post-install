@@ -1,0 +1,11 @@
+---
+- name: Configure git
+  git_config:
+    name: "{{ item.name }}"
+    value: "{{ item.value }}"
+    state: present
+    scope: global
+  loop:
+    - { name: init.defaultBranch, value: main }
+    - { name: user.name, value: "Sujal Singh" }
+    - { name: user.email, value: "email.sujalsingh@gmail.com" }
