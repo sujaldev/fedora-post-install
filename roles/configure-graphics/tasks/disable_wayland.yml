@@ -1,0 +1,11 @@
+---
+- name: Disabling Wayland, Setting Xorg as default
+  become: yes
+  ini_file:
+    path: /etc/gdm/custom.conf
+    section: daemon
+    option: "{{ item.option }}"
+    value: "{{ item.value }}"
+  loop:
+    - { option: WaylandEnable, value: false }
+    - { option: DefaultSession, value: gnome-xorg.desktop }

@@ -1,0 +1,8 @@
+---
+- name: Installing Nvidia Proprietary drivers
+  dnf:
+    name: item
+    state: present
+  loop:
+    - akmod-nvidia
+    - xorg-x11-drv-nvidia-cuda
