@@ -1,7 +1,8 @@
 ---
 - name: Installing Nvidia Proprietary drivers
+  become: yes
   dnf:
-    name: item
+    name: "{{ item }}"
     state: present
   loop:
     - akmod-nvidia

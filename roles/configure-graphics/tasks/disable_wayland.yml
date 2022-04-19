@@ -5,7 +5,7 @@
     path: /etc/gdm/custom.conf
     section: daemon
     option: "{{ item.option }}"
-    value: "{{ item.value }}"
+    value: "{{ item.value | string }}"
   loop:
-    - { option: WaylandEnable, value: false }
+    - { option: WaylandEnable, value: "false" }
     - { option: DefaultSession, value: gnome-xorg.desktop }
