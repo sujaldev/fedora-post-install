@@ -1,0 +1,18 @@
+---
+- name: Adding GPG key for Sublime Text
+  become: yes
+  rpm_key:
+    state: present
+    key: https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+
+- name: Selecting Stable Channel for Sublime Text
+  become: yes
+  command: dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
+  args:
+    creates: /etc/yum.repos.d/sublime-text.repo
+
+- name: Installing Sublime Text
+  become: yes
+  dnf:
+    state: latest
+    name: sublime-text

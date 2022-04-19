@@ -1,0 +1,27 @@
+---
+- include_tasks: multimedia_plugins.yml
+- include_tasks: google_chrome.yml
+- include_tasks: jetbrains_toolbox.yml
+- include_tasks: sublime_text.yml
+- include_tasks: vscode.yml
+
+- name: Installing Flatpak Applications
+  flatpak:
+    remote: flathub
+    name: "{{item}}"
+    state: present
+  loop:
+    - org.gnome.Extensions
+    - org.qbittorrent.qBittorrent
+
+- name: Installing Other Applications
+  become: yes
+  dnf:
+    name: "{{item}}"
+    state: present
+  loop:
+    - vim
+    - fira-code-fonts
+    - starship
+    - gnome-tweaks
+    - vlc

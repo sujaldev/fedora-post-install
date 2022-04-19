@@ -1,0 +1,19 @@
+---
+# Refer to issue https://github.com/ansible/ansible/issues/46963
+- name: Enabling Google Chrome repository
+  become: yes
+  yum_repository:
+    state: present
+    name: google-chrome
+    description: google-chrome
+    baseurl: https://dl.google.com/linux/chrome/rpm/stable/x86_64
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: https://dl.google.com/linux/linux_signing_key.pub
+
+
+- name: Installing Google Chrome
+  become: yes
+  dnf:
+    name: google-chrome-stable
+    state: present

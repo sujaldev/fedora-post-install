@@ -24,18 +24,19 @@ A checked box indicates this step has been implemented.
     - [x] Install proprietary nvidia drivers
 - [x] Install Fonts
     - FiraCode Nerd Font
-- [ ] Install Applications
-    - [ ] vim
-    - [ ] sublime text
-    - [ ] vscode
-    - [ ] google-chrome
-    - [ ] fira-code-fonts
-    - [ ] starship
-    - [ ] jetbrains tools
-    - [ ] gnome-tweaks
-    - [ ] gnome extensions
-    - [ ] qbittorrent
-    - [ ] vlc
+- [x] Install Applications
+    - [x] vim
+    - [x] sublime text
+    - [x] vscode
+    - [x] google-chrome
+    - [x] fira-code-fonts
+    - [x] starship
+    - [x] jetbrains toolbox
+    - [x] gnome-tweaks
+    - [x] gnome extensions
+    - [x] qbittorrent
+    - [x] vlc
+    - [x] multimedia plugins
 - [ ] Personalize
     - [ ] Install [Colloid Theme](https://github.com/vinceliuice/Colloid-gtk-theme)
     - [ ] Install [Colloid Icons](https://github.com/vinceliuice/Colloid-icon-theme)

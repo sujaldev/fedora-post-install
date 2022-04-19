@@ -1,0 +1,25 @@
+---
+- name: Installing Gstreamer plugins
+  become: yes
+  dnf:
+    state: present
+    name: "{{ item }}"
+    exclude: gstreamer1-plugins-bad-free-devel
+  loop:
+    - gstreamer1-plugins-bad-\*
+    - gstreamer1-plugins-good-\*
+    - gstreamer1-plugins-base
+    - gstreamer1-plugin-openh264
+    - gstreamer1-libav
+
+- name: Installing Lame
+  become: yes
+  dnf:
+    state: present
+    name: lame\*
+    exclude: lame-devel
+
+- name: Upgrading Group Multimedia
+  become: yes
+  command:
+    cmd: dnf -y group upgrade --with-optional Multimedia

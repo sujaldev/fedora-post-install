@@ -1,7 +1,6 @@
 ---
-- name: Add Flathub Repository
+- name: Adding Flathub Repository
   flatpak_remote:
     name: flathub
     state: present
     flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
-    method: user
