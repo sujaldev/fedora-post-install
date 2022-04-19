@@ -6,12 +6,14 @@ Automating all the things I do after installing fedora with ansible.
 
 A checked box indicates this step has been implemented.
 
-- [x] Update System
+- [x] Preflight
     - [x] Configure DNF
         - Set `installonly_limit` to 0
         - Add `max_parallel_downloads` with value as 20
         - Add `fastest_mirror` with value as True
-    - [x] Update
+    - [ ] Add RPM Fusion Repository
+    - [x] Update System
+    - [ ] Enable Flathub repository
 - [x] Configure Boot
     - [x] Disable GRUB menu
     - [x] Disable boot splash screen (I have observed it reduces boot time by 3-4 seconds)
