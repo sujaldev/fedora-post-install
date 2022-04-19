@@ -1,9 +1,12 @@
 ---
-- include_tasks: configure_dnf.yml
-- include_tasks: third_party_repositories.yml
-- name: Updating System
-  become: yes
-  dnf:
-    name: "*"
-    state: latest
-- include_tasks: add_flathub.yml
+- include: update_status.yml
+  vars:
+    text: preflight
+#- include_tasks: configure_dnf.yml
+#- include_tasks: third_party_repositories.yml
+#- name: Updating System
+#  become: yes
+#  dnf:
+#    name: "*"
+#    state: latest
+#- include_tasks: add_flathub.yml

@@ -1,8 +1,15 @@
 ---
 - hosts: localhost
+  vars:
+    status_generator: files/generate_status.py
+    font_path: files/status_font.ttf
+    wallpaper: wallpaper.jpg
   roles:
     - preflight
     - configure-boot
-    - configure-graphics
+    - role: configure-graphics
+      when: has_nvidia_gpu | default(False)
     - install-fonts
     - install-applications
+    - role: personalize
+      when: personalized | default(False)

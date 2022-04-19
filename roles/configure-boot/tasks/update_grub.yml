@@ -5,4 +5,4 @@
 
 - name: Updating Grub (/configure_boot/grub2/grub.cfg)
   become: yes
-  command: grub2-mkconfig -o /configure_boot/grub2/grub.cfg
+  command: grub2-mkconfig -o /boot/grub2/grub.cfg

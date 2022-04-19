@@ -14,7 +14,7 @@
   loop:
     - { key: "color-shading-type", value: "'solid'" }
     - { key: "picture-options", value: "'zoom'" }
-    - { key: "picture-uri", value: "'file:///home/{{ lookup('env', 'USER') }}/.local/share/backgrounds/wallpaper.jpg'" }
+    - { key: "picture-uri", value: "'file:///home/{{ lookup('env', 'USER') }}/.local/share/backgrounds/{{ wallpaper }}'" }
     - { key: "primary-color", value: "'#000000000000'" }
     - { key: "secondary-color", value: "'#000000000000'" }
 
@@ -25,6 +25,6 @@
   loop:
     - { key: "color-shading-type", value: "'solid'" }
     - { key: "picture-options", value: "'zoom'" }
-    - { key: "picture-uri", value: "'file:///home/{{ lookup('env', 'USER') }}/.local/share/backgrounds/wallpaper.jpg'" }
+    - { key: "picture-uri", value: "'file:///home/{{ lookup('env', 'USER') }}/.local/share/backgrounds/{{ wallpaper }}'" }
     - { key: "primary-color", value: "'#000000000000'" }
     - { key: "secondary-color", value: "'#000000000000'" }

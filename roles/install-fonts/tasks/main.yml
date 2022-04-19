@@ -1,2 +1,5 @@
 ---
+- include: update_status.yml
+  vars:
+    text: Installing Fonts
 - include_tasks: firacode_nerd_font.yml

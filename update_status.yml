@@ -1,0 +1,8 @@
+---
+- name: Updating Status
+  command: "python3 {{ status_generator }} {{ font_path }} {{ wallpaper }} {{ text }}"
+
+- name: Applying Status
+  dconf:
+    key: "/org/gnome/desktop/background/picture-uri"
+    value: "'file:///tmp/status.jpg'"

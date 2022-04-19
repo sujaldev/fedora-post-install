@@ -1,4 +1,8 @@
 ---
+- include: update_status.yml
+  vars:
+    text: Installing Applications
+
 - include_tasks: multimedia_plugins.yml
 - include_tasks: google_chrome.yml
 - include_tasks: jetbrains_toolbox.yml
