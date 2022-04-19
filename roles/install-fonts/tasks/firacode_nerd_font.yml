@@ -1,0 +1,31 @@
+---
+- name: Downloading FiraCode Nerd Font
+  get_url:
+    url: https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
+    dest: /tmp/firacode.zip
+
+- name: Create Font Directory
+  become: yes
+  file:
+    path: /usr/share/fonts/fira-code-nerd-fonts/
+    state: directory
+    mode: '0755'
+
+- name: Unzip FiraCode-Nerd-Font
+  become: yes
+  unarchive:
+    src: /tmp/firacode.zip
+    dest: /usr/share/fonts/fira-code-nerd-fonts/
+    remote_src: yes
+
+- name: Refresh Fonts
+  command: fc-cache -f
+
+- name: Refresh Fonts (root)
+  become: yes
+  command: fc-cache -f
+
+- name: Delete Font Zip File
+  file:
+    path: /tmp/firacode.zip
+    state: absent

@@ -1,0 +1,2 @@
+---
+- include_tasks: firacode_nerd_font.yml

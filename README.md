@@ -22,7 +22,7 @@ A checked box indicates this step has been implemented.
 - [x] Configure Graphics
     - [x] Disable Wayland and switch back to Xorg
     - [x] Install proprietary nvidia drivers
-- [ ] Install Fonts
+- [x] Install Fonts
     - FiraCode Nerd Font
 - [ ] Install Applications
     - [ ] vim
