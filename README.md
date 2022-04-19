@@ -19,7 +19,9 @@ A checked box indicates this step has been implemented.
     - [x] Disable boot splash screen (I have observed it reduces boot time by 3-4 seconds)
     - [x] Disable unnecessary services slowing down boot
         - `NetworkManager-wait-online.service`
-- [ ] Disable Wayland and switch back to Xorg
+- [ ] Configure Graphics
+    - [ ] Disable Wayland and switch back to Xorg
+    - [ ] Install proprietary nvidia drivers
 - [ ] Install Fonts
     - FiraCode Nerd Font
 - [ ] Install Applications
