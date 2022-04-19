@@ -1,0 +1,6 @@
+---
+- include_tasks: configure_dnf.yml
+- name: Updating System
+  dnf:
+    name: "*"
+    state: latest

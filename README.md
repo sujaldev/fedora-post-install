@@ -6,12 +6,12 @@ Automating all the things I do after installing fedora with ansible.
 
 A checked box indicates this step has been implemented.
 
-- [ ] Update System
-    - [ ] Configure DNF
+- [x] Update System
+    - [x] Configure DNF
         - Set `installonly_limit` to 0
         - Add `max_parallel_downloads` with value as 20
         - Add `fastest_mirror` with value as True
-    - [ ] Update
+    - [x] Update
 - [ ] Configure Boot
     - [ ] Disable GRUB menu
     - [ ] Disable boot splash screen (I have observed it reduces boot time by 3-4 seconds)

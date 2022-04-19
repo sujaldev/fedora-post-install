@@ -1,0 +1,11 @@
+- name: Configuring DNF (to make it faster)
+  become: yes
+  ini_file:
+    path: /etc/dnf/dnf.conf
+    section: main
+    option: "{{ item.option }}"
+    value: "{{ item.value }}"
+  loop:
+    - { option: installonly_limit, value: 0 }
+    - { option: max_parallel_downloads, value: 20 }
+    - { option: fastestmirror, value: True }
