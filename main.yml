@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  roles:
+    - preflight
+    - configure-boot
+    - configure-graphics
+    - install-fonts
+    - install-applications
