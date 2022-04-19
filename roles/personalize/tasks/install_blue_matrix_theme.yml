@@ -1,0 +1,45 @@
+---
+- name: Setting up Profiles List (dconf quirks)
+  dconf:
+    key: "/org/gnome/terminal/legacy/profiles:/list"
+    value: "['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', '86ae784e-04c4-4d82-99e8-6b9e8c3f6b23']"
+
+- name: Setting Blue Matrix Themes as Default
+  dconf:
+    key: "/org/gnome/terminal/legacy/profiles:/default"
+    value: "'86ae784e-04c4-4d82-99e8-6b9e8c3f6b23'"
+
+- name: Installing Blue Matrix Theme
+  dconf:
+    key: "/org/gnome/terminal/legacy/profiles:/:86ae784e-04c4-4d82-99e8-6b9e8c3f6b23/{{ item.key | string }}"
+    value: "{{ item.value | string }}"
+  loop:
+    # Theme Name
+    - { key: "visible-name", value: "'Blue Matrix'" }
+    # Fonts
+    - { key: "use-system-font", value: "false" }
+    - { key: "font", value: "'FiraCode Nerd Font 12'" }
+    # Bell Sound
+    - { key: "audible-bell", value: "true" }
+    # System Theme Settings
+    - { key: "use-theme-colors", value: "false" }
+    # Background And Foreground Colors
+    - { key: "background-color", value: "'rgb(36,41,50)'" }
+    - { key: "foreground-color", value: "'rgb(255,255,255)'" }
+    # Bold Colors
+    - { key: "bold-color-same-as-fg", value: "true" }
+    # Cursor Colors
+    - { key: "cursor-colors-set", value: "true" }
+    - { key: "cursor-background-color", value: "'rgb(118,255,159)'" }
+    - { key: "cursor-foreground-color", value: "'rgb(255,255,255)'" }
+    # Highlight Colors
+    - { key: "highlight-colors-set", value: "true" }
+    - { key: "highlight-background-color", value: "'rgb(193,222,255)'" }
+    - { key: "highlight-foreground-color", value: "'rgb(0,162,255)'" }
+    # Background Transparency
+    - { key: "use-transparent-background", value: "true" }
+    - { key: "background-transparency-percent", value: 2 }
+    # Main Color Scheme
+    - { key: "palette", value: "['rgb(16,17,22)', 'rgb(255,86,128)', 'rgb(0,255,156)', 'rgb(255,252,88)', 'rgb(0,176,255)', 'rgb(213,123,255)', 'rgb(118,193,255)', 'rgb(199,199,199)', 'rgb(104,104,104)', 'rgb(255,110,103)', 'rgb(95,250,104)', 'rgb(255,252,103)', 'rgb(104,113,255)', 'rgb(214,130,236)', 'rgb(96,253,255)', 'rgb(255,255,255)']" }
+    # Bright Bold Colors
+    - { key: "bold-is-bright", value: "true" }

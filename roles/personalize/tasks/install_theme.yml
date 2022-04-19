@@ -1,0 +1,31 @@
+---
+- name: Installing Colloid GTK Theme Build Dependencies
+  become: yes
+  dnf:
+    state: present
+    name: sassc
+
+- name: Downloading Colloid GTK Theme
+  git:
+    repo: https://github.com/vinceliuice/Colloid-gtk-theme
+    dest: /tmp/theme
+
+- name: Installing Colloid GTK Theme
+  command:
+    cmd: /tmp/theme/install.sh --tweaks nord normal --dest ~/t
+  args:
+    chdir: /tmp/theme
+
+- name: Applying Colloid GTK Theme
+  dconf:
+    key: "/org/gnome/{{ item.key | string }}"
+    value: "'Colloid-dark-nord'"
+  loop:
+    - { key: "desktop/interface/gtk-theme" }
+    - { key: "shell/extensions/user-theme/name" }
+
+
+- name: Cleaning Temporary Installation Files
+  file:
+    path: /tmp/theme
+    state: absent

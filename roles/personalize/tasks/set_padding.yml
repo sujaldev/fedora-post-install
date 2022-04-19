@@ -1,0 +1,11 @@
+---
+- name: Creating Terminal Padding Config Folder
+  file:
+    path: ~/.config/gtk-3.0/
+    state: directory
+
+- name: Setting Terminal Padding
+  copy:
+    src: gtk.css
+    dest: ~/.config/gtk-3.0/gtk.css
+    mode: '0644'

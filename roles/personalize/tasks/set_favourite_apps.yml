@@ -1,0 +1,5 @@
+---
+- name: Setting Favourite Apps
+  dconf:
+    key: "/org/gnome/shell/favorite-apps"
+    value: "['org.gnome.Nautilus.desktop', 'firefox.desktop', 'google-chrome.desktop', 'code.desktop', 'sublime_text.desktop', 'jetbrains-pycharm.desktop', 'jetbrains-webstorm.desktop', 'jetbrains-toolbox.desktop']"

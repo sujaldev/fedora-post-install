@@ -1,0 +1,30 @@
+---
+- name: Copying Wallpapers
+  copy:
+    src: "{{ item }}"
+    dest: ~/.local/share/backgrounds/
+    mode: 0644
+  with_fileglob:
+    - wallpapers/*
+
+- name: Applying Wallpaper
+  dconf:
+    key: "/org/gnome/desktop/background/{{ item.key | string }}"
+    value: "{{ item.value | string }}"
+  loop:
+    - { key: "color-shading-type", value: "'solid'" }
+    - { key: "picture-options", value: "'zoom'" }
+    - { key: "picture-uri", value: "'file:///home/{{ lookup('env', 'USER') }}/.local/share/backgrounds/wallpaper.jpg'" }
+    - { key: "primary-color", value: "'#000000000000'" }
+    - { key: "secondary-color", value: "'#000000000000'" }
+
+- name: Applying Screensaver
+  dconf:
+    key: "/org/gnome/desktop/background/{{ item.key | string }}"
+    value: "{{ item.value | string }}"
+  loop:
+    - { key: "color-shading-type", value: "'solid'" }
+    - { key: "picture-options", value: "'zoom'" }
+    - { key: "picture-uri", value: "'file:///home/{{ lookup('env', 'USER') }}/.local/share/backgrounds/wallpaper.jpg'" }
+    - { key: "primary-color", value: "'#000000000000'" }
+    - { key: "secondary-color", value: "'#000000000000'" }

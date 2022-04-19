@@ -1,0 +1,50 @@
+---
+- name: Setting Standard Shortcuts
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/{{ item.key | string }}"
+    value: "{{ item.value | string }}"
+  loop:
+    - { key: "area-screenshot-clip", value: "['<Shift><Super>s']" }
+    - { key: "control-center", value: "['<Super>i']" }
+    - { key: "home", value: "['<Super>e']" }
+
+- name: Setting Custom Shortcuts List
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings"
+    value: "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/']"
+
+- name: Setting Custom Shortcuts For Terminal
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/{{ item.key | string }}"
+    value: "{{ item.value | string }}"
+  loop:
+    - { key: "binding", value: "'<Alt>t'" }
+    - { key: "command", value: "'gnome-terminal'" }
+    - { key: "name", value: "'Terminal'" }
+
+- name: Setting Custom Shortcut For Google-Chrome Default
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/{{ item.key | string }}"
+    value: "{{ item.value | string }}"
+  loop:
+    - { key: "binding", value: "'<Alt>c'" }
+    - { key: "command", value: '''google-chrome-stable --profile-directory="Default"''' }
+    - { key: "name", value: "'Chrome (Default)'" }
+
+- name: Setting Custom Shortcut For Google-Chrome Profile 1
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/{{ item.key | string }}"
+    value: "{{ item.value | string }}"
+  loop:
+    - { key: "binding", value: "'<Shift><Alt>c'" }
+    - { key: "command", value: '''google-chrome-stable --profile-directory="Profile 1"''' }
+    - { key: "name", value: "'Chrome (Profile 1)'" }
+
+- name: Setting Custom Shortcut For Google-Chrome Profile 2
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/{{ item.key | string }}"
+    value: "{{ item.value | string }}"
+  loop:
+    - { key: "binding", value: "'<Alt>x'" }
+    - { key: "command", value: '''google-chrome-stable --profile-directory="Profile 2"''' }
+    - { key: "name", value: "'Chrome (Profile 2)'" }

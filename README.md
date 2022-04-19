@@ -38,12 +38,12 @@ A checked box indicates this step has been implemented.
     - [x] vlc
     - [x] multimedia plugins
 - [ ] Personalize
-    - [ ] Install [Colloid Theme](https://github.com/vinceliuice/Colloid-gtk-theme)
-    - [ ] Install [Colloid Icons](https://github.com/vinceliuice/Colloid-icon-theme)
-    - [ ] Customize Terminal
-        - [ ] Install [Blue Matrix Theme](https://windowsterminalthemes.dev/?theme=Blue%20Matrix)
-        - [ ] Set Padding
-    - [ ] Setup shortcuts
+    - [x] Install [Colloid Theme](https://github.com/vinceliuice/Colloid-gtk-theme)
+    - [x] Install [Colloid Icons](https://github.com/vinceliuice/Colloid-icon-theme)
+    - [x] Customize Terminal
+        - [x] Install [Blue Matrix Theme](https://windowsterminalthemes.dev/?theme=Blue%20Matrix)
+        - [x] Set Padding
+    - [x] Setup shortcuts
     - [ ] Configure git
-    - [ ] Set wallpaper
-    - [ ] Set favourite apps in dock
+    - [x] Set wallpaper
+    - [x] Set favourite apps in dock

@@ -1,0 +1,21 @@
+---
+- name: Downloading Colloid Icon Theme
+  git:
+    repo: https://github.com/vinceliuice/Colloid-icon-theme
+    dest: /tmp/icons
+
+- name: Installing Colloid Icon Theme
+  command:
+    cmd: /tmp/icons/install.sh
+  args:
+    chdir: /tmp/icons
+
+- name: Applying Colloid GTK Theme
+  dconf:
+    key: "/org/gnome/desktop/interface/icon-theme"
+    value: "'Colloid-dark'"
+
+- name: Cleaning Temporary Installation Files
+  file:
+    path: /tmp/icons
+    state: absent
