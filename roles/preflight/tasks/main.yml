@@ -2,6 +2,7 @@
 - include_tasks: configure_dnf.yml
 - include_tasks: add_rpm_fusion.yml
 - name: Updating System
+  become: yes
   dnf:
     name: "*"
     state: latest
