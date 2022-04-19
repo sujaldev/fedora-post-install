@@ -11,9 +11,9 @@ A checked box indicates this step has been implemented.
         - Set `installonly_limit` to 0
         - Add `max_parallel_downloads` with value as 20
         - Add `fastest_mirror` with value as True
-    - [ ] Add RPM Fusion Repository
+    - [x] Add RPM Fusion Repository
     - [x] Update System
-    - [ ] Enable Flathub repository
+    - [x] Enable Flathub repository
 - [x] Configure Boot
     - [x] Disable GRUB menu
     - [x] Disable boot splash screen (I have observed it reduces boot time by 3-4 seconds)

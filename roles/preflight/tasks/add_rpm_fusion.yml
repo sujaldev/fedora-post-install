@@ -1,0 +1,9 @@
+---
+- name: Add RPM Fusion Repository
+  become: yes
+  dnf:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm%20-E%20%fedora).noarch.rpm"
+    - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm%20-E%20%fedora).noarch.rpm"
