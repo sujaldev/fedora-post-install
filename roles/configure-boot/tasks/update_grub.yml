@@ -1,0 +1,8 @@
+---
+- name: Updating Grub (/etc/grub2-efi.cfg)
+  become: yes
+  command: grub2-mkconfig -o /etc/grub2-efi.cfg
+
+- name: Updating Grub (/configure_boot/grub2/grub.cfg)
+  become: yes
+  command: grub2-mkconfig -o /configure_boot/grub2/grub.cfg

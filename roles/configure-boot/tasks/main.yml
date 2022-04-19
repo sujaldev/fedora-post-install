@@ -1,0 +1,5 @@
+---
+- include_tasks: disable_grub_menu.yml
+- include_tasks: disable_boot_screen.yml
+- include_tasks: update_grub.yml
+- include_tasks: disable_unnecessary_services.yml

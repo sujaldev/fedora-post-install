@@ -1,0 +1,8 @@
+---
+- name: Disabling GRUB menu
+  become: yes
+  lineinfile:
+    path: /etc/default/grub
+    state: present
+    regexp: '^GRUB_TIMEOUT.*$'
+    line: "GRUB_TIMEOUT=0"

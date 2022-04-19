@@ -1,0 +1,6 @@
+---
+- name: Disable unnecessary services
+  become: yes
+  systemd:
+    name: NetworkManager-wait-online
+    enabled: no

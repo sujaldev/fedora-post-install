@@ -1,0 +1,9 @@
+---
+- name: "Disable configure_boot screen"
+  become: yes
+  lineinfile:
+    path: /etc/default/grub
+    backrefs: yes
+    state: present
+    regexp: '^GRUB_CMDLINE_LINUX="(.*)"$'
+    line: 'GRUB_CMDLINE_LINUX="\1 rd.plymouth=0 plymouth.enable=0"'

@@ -12,10 +12,10 @@ A checked box indicates this step has been implemented.
         - Add `max_parallel_downloads` with value as 20
         - Add `fastest_mirror` with value as True
     - [x] Update
-- [ ] Configure Boot
-    - [ ] Disable GRUB menu
-    - [ ] Disable boot splash screen (I have observed it reduces boot time by 3-4 seconds)
-    - [ ] Disable unnecessary services slowing down boot
+- [x] Configure Boot
+    - [x] Disable GRUB menu
+    - [x] Disable boot splash screen (I have observed it reduces boot time by 3-4 seconds)
+    - [x] Disable unnecessary services slowing down boot
         - `NetworkManager-wait-online.service`
 - [ ] Disable Wayland and switch back to Xorg
 - [ ] Install Fonts
