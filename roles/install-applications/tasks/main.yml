@@ -13,6 +13,7 @@
   loop:
     - org.gnome.Extensions
     - org.qbittorrent.qBittorrent
+    - org.videolan.VLC
 
 - name: Installing Other Applications
   become: yes
@@ -24,4 +25,3 @@
     - fira-code-fonts
     - starship
     - gnome-tweaks
-    - vlc
