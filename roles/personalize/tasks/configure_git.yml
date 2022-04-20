@@ -7,5 +7,17 @@
     scope: global
   loop:
     - { name: init.defaultBranch, value: main }
-    - { name: user.name, value: "Sujal Singh" }
-    - { name: user.email, value: "email.sujalsingh@gmail.com" }
+    - { name: user.name, value: "{{ name }}" }
+    - { name: user.email, value: "{{ email }}" }
+
+- name: Generating SSH Keys
+  community.crypto.openssh_keypair:
+    type: ed25519
+    comment: "{{ email }}"
+    path: "/home/{{ lookup('env', 'USER') }}/.ssh/github"
+
+- name: Starting SSH agent
+  shell: 'eval "$(ssh-agent -s)"'
+
+- name: Adding Key to SSH agent
+  shell: "ssh-add /home/{{ lookup('env', 'USER') }}/.ssh/github"

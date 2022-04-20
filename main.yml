@@ -1,6 +1,8 @@
 ---
 - hosts: localhost
   vars:
+    email: "email.sujalsingh@gmail.com"
+    name: "Sujal Singh"
     status_generator: files/generate_status.py
     font_path: files/status_font.ttf
     wallpaper: wallpaper.jpg
