@@ -10,3 +10,6 @@
 - include_tasks: configure_git.yml
 - include_tasks: set_wallpaper.yml
 - include_tasks: set_favourite_apps.yml
+
+- name: Writing post installation commands to clean up in .profile
+  shell: "printf '\nrm /home/{{ lookup('env', 'USER') }}/.profile\nmv /home/{{ lookup('env', 'USER') }}/profile_backup /home/{{ lookup('env', 'USER') }}/.profile' >> /home/{{ lookup('env', 'USER') }}/.profile"

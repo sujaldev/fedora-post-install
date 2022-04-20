@@ -14,3 +14,6 @@
     remote_src: yes
     src: "{{ data.json.TBA[0].downloads.linux.link }}"
     dest: /opt/
+
+- name: Creating initialization script on next login
+  shell: "printf '/opt/jetbrains-toolbox-*/jetbrains-toolbox' >> /home/{{ lookup('env', 'USER') }}/.profile"

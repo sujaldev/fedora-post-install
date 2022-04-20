@@ -2,11 +2,18 @@
 - include: update_status.yml
   vars:
     text: preflight
+
+- name: Creating .profile backup if exists
+  copy:
+    src: "{{ item }}"
+    dest: "/home/{{ lookup('env', 'USER') }}/profile_backup"
+  with_fileglob: "/home/{{ lookup('env', 'USER') }}/.profile"
+
 - include_tasks: configure_dnf.yml
-- include_tasks: third_party_repositories.yml
 - name: Updating System
   become: yes
   dnf:
     name: "*"
     state: latest
 - include_tasks: add_flathub.yml
+- include_tasks: third_party_repositories.yml

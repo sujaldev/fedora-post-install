@@ -1,11 +1,4 @@
 ---
-- vars:
-  extensions:
-    - 19 # user themes
-    - 1230 # gnome email notifications
-    - 2890 # tray icons reloaded
-    - 3193 # blur my shell
-
 - name: Determining Shell Version
   shell: gnome-shell --version | grep -Eo '[0-9].*'
   register: shell_version
@@ -19,6 +12,13 @@
   loop: "{{ extensions }}"
   register: api
 
+- name: Creating Installation Directory
+  file:
+    path: "/home/{{ lookup('env', 'USER') }}/.local/share/gnome-shell/extensions/{{ item.json.uuid }}"
+    state: directory
+    mode: '0755'
+  loop: "{{ api.results }}"
+
 - name: Downloading Extensions
   unarchive:
     remote_src: yes
@@ -26,7 +26,6 @@
     dest: "/home/{{ lookup('env', 'USER') }}/.local/share/gnome-shell/extensions/{{ item.json.uuid }}"
   loop: "{{ api.results }}"
 
-- name: Enabling Extensions
-  command:
-    cmd: "gnome-extensions enable {{ item.json.uuid }}"
+- name: Creating Extension installer in .profile for next login
+  shell: "printf '\ngnome-extensions enable {{ item.json.uuid }}' >> /home/{{ lookup('env', 'USER') }}/.profile"
   loop: "{{ api.results }}"

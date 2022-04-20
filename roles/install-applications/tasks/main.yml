@@ -8,16 +8,17 @@
 - include_tasks: jetbrains_toolbox.yml
 - include_tasks: sublime_text.yml
 - include_tasks: vscode.yml
+- include_tasks: starship.yml
 
 - name: Installing Flatpak Applications
   flatpak:
     remote: flathub
-    name: "{{item}}"
     state: present
-  loop:
-    - org.gnome.Extensions
-    - org.qbittorrent.qBittorrent
-    - org.videolan.VLC
+    method: user
+    name:
+      - org.gnome.Extensions
+      - org.qbittorrent.qBittorrent
+      - org.videolan.VLC
 
 - name: Installing Other Applications
   become: yes
@@ -27,5 +28,4 @@
   loop:
     - vim
     - fira-code-fonts
-    - starship
     - gnome-tweaks

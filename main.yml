@@ -4,6 +4,12 @@
     status_generator: files/generate_status.py
     font_path: files/status_font.ttf
     wallpaper: wallpaper.jpg
+    extensions:
+      - 19 # user themes
+      - 1230 # gnome email notifications
+      - 2890 # tray icons reloaded
+      - 3193 # blur my shell
+
   roles:
     - preflight
     - configure-boot

@@ -1,0 +1,8 @@
+---
+- name: Installing starship
+  dnf:
+    name: starship
+    state: present
+
+- name: Initializing starship
+  shell: 'printf ''eval "$(starship init bash)"'' >> .bashrc'

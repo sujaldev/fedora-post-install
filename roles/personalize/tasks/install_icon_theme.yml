@@ -5,10 +5,7 @@
     dest: /tmp/icons
 
 - name: Installing Colloid Icon Theme
-  command:
-    cmd: /tmp/icons/install.sh
-  args:
-    chdir: /tmp/icons
+  shell: 'python3 -c "import subprocess;subprocess.run([''./install.sh''], cwd=''/tmp/icons/'')"'
 
 - name: Applying Colloid GTK Theme
   dconf:
