@@ -1,0 +1,5 @@
+---
+- name: Enabling Minimize & Maximize Buttons
+  dconf:
+    key: "/org/gnome/desktop/wm/preferences/button-layout"
+    value: "'appmenu:minimize,maximize,close'"

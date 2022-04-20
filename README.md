@@ -19,7 +19,7 @@ A checked box indicates this step has been implemented.
     - [x] Disable boot splash screen (I have observed it reduces boot time by 3-4 seconds)
     - [x] Disable unnecessary services slowing down boot
         - `NetworkManager-wait-online.service`
-- [x] Configure Graphics
+- [x] Configure Graphics _(this step is skipped by default)_
     - [x] Disable Wayland and switch back to Xorg
     - [x] Install proprietary nvidia drivers
 - [x] Install Fonts
@@ -37,7 +37,13 @@ A checked box indicates this step has been implemented.
     - [x] qbittorrent
     - [x] vlc
     - [x] multimedia plugins
+- [ ] Install Extensions
+    - [ ] Blur my shell
+    - [ ] Gnome Email Notifications
+    - [ ] Tray Icons Reloaded
+    - [ ] User Themes
 - [x] Personalize
+    - [x] Enable minimize & maximize buttons
     - [x] Install [Colloid Theme](https://github.com/vinceliuice/Colloid-gtk-theme)
     - [x] Install [Colloid Icons](https://github.com/vinceliuice/Colloid-icon-theme)
     - [x] Customize Terminal
