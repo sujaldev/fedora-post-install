@@ -2,6 +2,26 @@
 
 Automating all the things I do after installing fedora with ansible.
 
+## Support
+
+- Desktop Environment: GNOME
+- Distribution: Fedora
+    - [ ] versions 35+: not supported due to major changes in GNOME
+    - [x] version 35: supported and tested
+    - [x] versions below 35: untested
+
+## How to run
+
+- To run defaults
+  ```shell
+  curl https://raw.githubusercontent.com/sujaldev/fedora-post-install/main/run.sh | sh
+  ```
+
+- To pass extra arguments
+  ```shell
+  curl https://raw.githubusercontent.com/sujaldev/fedora-post-install/main/run.sh | sh -s "has_nvidia_gpu=True personalized=True"
+  ```
+
 # What does it do?
 
 A checked box indicates this step has been implemented.
