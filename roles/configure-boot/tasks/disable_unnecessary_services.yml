@@ -2,5 +2,17 @@
 - name: Disable unnecessary services
   become: yes
   systemd:
-    name: NetworkManager-wait-online
+    name: "{{ item }}"
     enabled: no
+  loop:
+    - NetworkManager-wait-online
+    - wpa_supplicant
+
+- name: Masking unnecessary services
+  become: yes
+  systemd:
+    name: "{{ item }}"
+    masked: yes
+  loop:
+    - lvm2-monitor
+    - systemd-udev-settle
