@@ -2,13 +2,13 @@ import sys
 from PIL import Image, ImageFilter, ImageDraw, ImageFont
 
 
-def blur_image(image, radius=30):
+def blur_image(image, radius=20):
     return image.filter(
         ImageFilter.GaussianBlur(radius=radius)
     )
 
 
-def write_text(image, text, font, size=150, color=(0, 143, 33)):
+def write_text(image, text, font, size=150, color=(247, 209, 0)):
     text = text.upper()
     draw = ImageDraw.Draw(image)
     font = ImageFont.truetype(font, size)
