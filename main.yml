@@ -11,5 +11,6 @@
       when: has_nvidia_gpu | default(False)
     - install-fonts
     - install-applications
+    - install-extensions
     - role: personalize
       when: personalized | default(False)

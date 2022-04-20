@@ -37,11 +37,11 @@ A checked box indicates this step has been implemented.
     - [x] qbittorrent
     - [x] vlc
     - [x] multimedia plugins
-- [ ] Install Extensions
-    - [ ] Blur my shell
-    - [ ] Gnome Email Notifications
-    - [ ] Tray Icons Reloaded
-    - [ ] User Themes
+- [x] Install Extensions
+    - [x] User Themes
+    - [x] Gnome Email Notifications
+    - [x] Tray Icons Reloaded
+    - [x] Blur my shell
 - [x] Personalize
     - [x] Enable minimize & maximize buttons
     - [x] Install [Colloid Theme](https://github.com/vinceliuice/Colloid-gtk-theme)

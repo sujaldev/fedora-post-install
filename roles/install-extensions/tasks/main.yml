@@ -1,0 +1,32 @@
+---
+- vars:
+  extensions:
+    - 19 # user themes
+    - 1230 # gnome email notifications
+    - 2890 # tray icons reloaded
+    - 3193 # blur my shell
+
+- name: Determining Shell Version
+  shell: gnome-shell --version | grep -Eo '[0-9].*'
+  register: shell_version
+
+
+- name: Fetching Downloads links
+  uri:
+    url: "https://extensions.gnome.org/extension-info/?pk={{ item }}&shell_version={{ shell_version.stdout }}"
+    method: GET
+    return_content: yes
+  loop: "{{ extensions }}"
+  register: api
+
+- name: Downloading Extensions
+  unarchive:
+    remote_src: yes
+    src: "https://extensions.gnome.org/{{ item.json.download_url }}"
+    dest: "/home/{{ lookup('env', 'USER') }}/.local/share/gnome-shell/extensions/{{ item.json.uuid }}"
+  loop: "{{ api.results }}"
+
+- name: Enabling Extensions
+  command:
+    cmd: "gnome-extensions enable {{ item.json.uuid }}"
+  loop: "{{ api.results }}"
