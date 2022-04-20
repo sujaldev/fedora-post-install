@@ -1,8 +1,9 @@
 ---
 - name: Installing starship
+  become: yes
   dnf:
     name: starship
     state: present
 
 - name: Initializing starship
-  shell: 'printf ''eval "$(starship init bash)"'' >> .bashrc'
+  shell: "printf 'eval \"$(starship init bash)\"' >> /home/{{ lookup('env', 'USER') }}/.bashrc"
