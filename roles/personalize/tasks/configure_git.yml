@@ -10,6 +10,12 @@
     - { name: user.name, value: "{{ name }}" }
     - { name: user.email, value: "{{ email }}" }
 
+- name: Creating ~/.ssh directory
+  file:
+    path: "/home/{{ lookup('env', 'USER') }}/.ssh"
+    state: directory
+    mode: '0755'
+
 - name: Generating SSH Keys
   community.crypto.openssh_keypair:
     type: ed25519
