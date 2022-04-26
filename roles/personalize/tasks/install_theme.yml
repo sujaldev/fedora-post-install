@@ -12,7 +12,7 @@
 
 - name: Installing Colloid GTK Theme
   command:
-    cmd: /tmp/theme/install.sh --tweaks nord normal --dest ~/t
+    cmd: /tmp/theme/install.sh --tweaks nord normal
   args:
     chdir: /tmp/theme
 
