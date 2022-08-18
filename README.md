@@ -1,4 +1,6 @@
-# Fedora Post Install
+# Fedora Post Install ![deprecated](https://img.shields.io/badge/status-deprecated-red)
+
+I have switched to f36, no longer using this.
 
 Automating all the things I do after installing fedora with ansible.
 
